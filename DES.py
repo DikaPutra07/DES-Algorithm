@@ -94,16 +94,23 @@ def permute(k, arr, n): 	#contoh pt = permute(pt, initial_perm, 64)
 # fungsi untuk melakukan shift left
 
 
+# def shift_left(k, nth_shifts): 	# contoh : left = shift_left(left, shift_table[i])
+# 	s = ""
+# 	for i in range(nth_shifts):
+# 		for j in range(1, len(k)):
+# 			s = s + k[j]
+# 		s = s + k[0]
+# 		k = s
+# 		s = ""
+# 	return k
+
 def shift_left(k, nth_shifts): 	# contoh : left = shift_left(left, shift_table[i])
 	s = ""
-	for i in range(nth_shifts):
-		for j in range(1, len(k)):
-			s = s + k[j]
-		s = s + k[0]
-		k = s
-		s = ""
-	return k
-
+	for i in range(nth_shifts, len(k)):
+		s = s + k[i]
+	for i in range(0, nth_shifts):
+		s = s + k[i]
+	return s
 
 # fungsi untuk melakukan operasi xor antara dua nilai biner dari string a dan b
 
